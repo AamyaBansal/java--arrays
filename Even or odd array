@@ -1,0 +1,45 @@
+import java.util.*;
+import java.math.*;
+class Even_Odd {
+    public static void printArray(int[] array)
+    {
+        for (int j:array) System.out.print(j + " ");
+        System.out.println();
+    }
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter length of input array");
+        int N = sc.nextInt();
+        // array with N size
+        int array[] = new int[N];
+        System.out.print("Enter input");
+        for(int i=0;i<N;i++)
+            array[i]=sc.nextInt();
+
+
+        int even= 0;
+        int odd = 0;
+        for (int i = 0; i < N; i++) {
+            if (array[i] % 2 == 0)
+                even++;
+            else
+                odd++;
+        }
+        int[] evena = new int[even];
+        int[] odda = new int[odd];
+        // odd and even array iterator
+        int j = 0, k = 0;
+        for (int i = 0; i < N; i++) {
+            if (array[i] % 2 == 0)
+                evena[j++] = array[i];
+            else
+                odda[k++] = array[i];
+        }
+        // print array method
+        System.out.print("Even Array");
+        printArray(evena);
+        System.out.print("Odd Array");
+        printArray(odda);
+    }
+}
