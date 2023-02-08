@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class array{
+    static void dis(int [] array){
+
+        int small = Math.abs(array[0]-array[1]);
+        int index= 0;
+        for(int i=1; i<array.length-1; i++) {
+            int value = Math.abs(array[i] - array[i + 1]);
+            if (value < small) {
+                small = value;
+                index = i;
+            }
+
+        }
+        System.out.print("smallest distance: ");
+        System.out.println(small);
+        System.out.print("index at which no. is situated: ");
+        System.out.println(index);
+
+    }
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter length of input array");
+        int N = sc.nextInt();
+        // array with N size
+        int array[] = new int[N];
+        System.out.print("Enter input");
+        for(int i=0;i<N;i++)
+            array[i]=sc.nextInt();
+        dis(array);
+    }
+}
