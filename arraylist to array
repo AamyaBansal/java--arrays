@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+class array_l {
+    public static void main(String[] args) {
+        ArrayList arr = new ArrayList<>();
+
+        // Add elements in the list
+        arr.add("a");
+        arr.add("b");
+        arr.add("c");
+        System.out.println("ArrayList: " + arr);
+
+        // Create a new array of String type
+        String[] array = new String[arr.size()];
+
+        // Convert ArrayList into the string array
+        arr.toArray(array);
+        System.out.print("Array: ");
+        for(Object item:arr) {
+            System.out.print(item+", ");
+        }
+    }
+}
